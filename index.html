@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ichiraku Ramen — East Jakarta</title>
+<meta name="description" content="Ichiraku Ramen — Special, Shoyu, Spicy and Easy Gyoza Ramen, with Lemon Tea and Green Tea. East Jakarta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="#top" class="brand" aria-label="Ichiraku Ramen — back to top">
+      <img src="images/logo.png" alt="Ichiraku Ramen logo" class="brand-logo">
+      <span class="brand-text">
+        <span class="brand-name">Ichiraku</span>
+        <span class="brand-sub">Ramen &amp; Tea House</span>
+      </span>
+    </a>
+
+    <!-- NEW: wrapper for language toggle + Track Order + Cart -->
+    <div class="header-actions">
+
+      <!-- NEW: language toggle (#4) -->
+      <div class="lang-toggle" role="group" aria-label="Language" data-i18n-aria="aria_lang">
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" class="lang-btn" data-lang="id" aria-pressed="false">ID</button>
+      </div>
+
+      <!-- NEW: Track Order button (#8) -->
+      <button type="button" class="track-trigger" id="track-trigger" aria-haspopup="dialog" aria-controls="track-modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M3 7h11v9H3V7Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+          <path d="M14 10h4l3 3v3h-7v-6Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+          <circle cx="7.5" cy="17.5" r="1.7" fill="var(--cream-50)" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="17" cy="17.5" r="1.7" fill="var(--cream-50)" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <span class="track-trigger-label" data-i18n="track_order">Track Order</span>
+      </button>
+
+      <button class="cart-trigger" id="cart-trigger" aria-haspopup="dialog" aria-controls="cart-drawer" aria-label="Open cart" data-i18n-aria="aria_cart">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 8h16l-1.4 10.2a2 2 0 0 1-2 1.8H7.4a2 2 0 0 1-2-1.8L4 8Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+          <path d="M8.5 8V6a3.5 3.5 0 0 1 7 0v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+        <span class="cart-trigger-label" data-i18n="cart">Cart</span>
+        <span class="cart-badge" id="cart-badge" hidden>0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO CAROUSEL ============ -->
+  <section class="hero" aria-label="Promo banner">
+    <div class="hero-track" id="hero-track">
+      <div class="hero-slide">
+        <img src="images/banner_1.jpg" alt="Ichiraku Ramen October Special — East Jakarta" loading="eager">
+      </div>
+      <div class="hero-slide">
+        <img src="images/banner_2.jpg" alt="Promo: All Ramen Rp 60,000 — Spicy, Special, Shoyu" loading="lazy">
+      </div>
+    </div>
+
+    <button class="hero-arrow hero-arrow-prev" id="hero-prev" aria-label="Previous banner">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <button class="hero-arrow hero-arrow-next" id="hero-next" aria-label="Next banner">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+
+    <div class="hero-dots" id="hero-dots" role="tablist" aria-label="Select banner"></div>
+  </section>
+
+  <!-- ============ DIVIDER ============ -->
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" class="divider-wave">
+      <path d="M0,32 C240,60 480,0 720,20 C960,40 1200,8 1440,30 L1440,60 L0,60 Z"></path>
+    </svg>
+    <div class="divider-mark">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4 10h16l-1.6 7.2A2.5 2.5 0 0 1 16 19.2H8a2.5 2.5 0 0 1-2.4-2L4 10Z" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M3 10c1.5-3.2 4.6-5.2 9-5.2s7.5 2 9 5.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ============ MENU ============ -->
+  <section class="menu-section" id="menu" aria-label="Menu">
+    <div class="menu-intro">
+      <h1 data-i18n="menu_title">Our Menu</h1>
+      <p data-i18n="menu_intro">Steaming bowls of ramen made with signature recipes, paired with refreshing tea to go with every sip.</p>
+    </div>
+
+    <!-- NEW: search (#2) + category filter (#7) -->
+    <div class="menu-toolbar">
+      <div class="search-box">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.8"/>
+          <path d="M16 16l4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <input type="search" id="menu-search" class="search-input" autocomplete="off"
+               placeholder="Search menu…" data-i18n-placeholder="search_placeholder"
+               aria-label="Search menu" data-i18n-aria="search_label">
+      </div>
+
+      <div class="category-chips" id="category-chips" role="group" aria-label="Menu categories" data-i18n-aria="categories_label">
+        <button type="button" class="chip" data-category="all" aria-pressed="true" data-i18n="cat_all">All</button>
+        <button type="button" class="chip" data-category="ramen" aria-pressed="false" data-i18n="cat_ramen">Ramen</button>
+        <button type="button" class="chip" data-category="drink" aria-pressed="false" data-i18n="cat_drinks">Drinks</button>
+      </div>
+    </div>
+
+    <div class="menu-columns" id="menu-columns">
+
+      <!-- RAMEN -->
+      <div class="menu-column" id="ramen-column">
+        <h2 class="menu-column-title">
+          <span data-i18n="col_ramen">Ramen</span>
+          <em data-i18n="col_ramen_sub">Warm broth, loaded with toppings</em>
+        </h2>
+
+        <div class="menu-grid" id="ramen-grid">
+          <!-- cards injected by JS -->
+        </div>
+      </div>
+
+      <!-- DRINKS -->
+      <div class="menu-column menu-column-drinks" id="drinks-column">
+        <h2 class="menu-column-title">
+          <span data-i18n="col_drinks">Drinks</span>
+          <em data-i18n="col_drinks_sub">Refreshing, sweet, just right</em>
+        </h2>
+
+        <div class="drinks-carousel" id="drinks-carousel">
+          <div class="drinks-track" id="drinks-track">
+            <!-- cards injected by JS -->
+          </div>
+
+          <button class="drinks-arrow drinks-arrow-prev" id="drinks-prev" aria-label="Previous drink">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="drinks-arrow drinks-arrow-next" id="drinks-next" aria-label="Next drink">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+
+          <div class="drinks-dots" id="drinks-dots" role="tablist" aria-label="Select drink"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- NEW: shown when search/filter has no result -->
+    <div class="menu-empty" id="menu-empty" hidden>
+      <p data-i18n="empty_title">No menu found</p>
+      <span data-i18n="empty_desc">Try a different keyword or category.</span>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="images/logo.png" alt="" class="footer-logo">
+      <div>
+        <p class="footer-name">Ichiraku Ramen</p>
+        <p class="footer-loc" data-i18n="footer_loc">East Jakarta, Indonesia</p>
+      </div>
+    </div>
+    <p class="footer-note" data-i18n="footer_note">Open daily · 11:00 AM – 9:00 PM · Dine-in &amp; Takeaway</p>
+    <!-- NEW: second entry point for Track Order (#8) -->
+    <button type="button" class="footer-link" id="track-footer-btn" data-i18n="track_order">Track Order</button>
+    <p class="footer-copy" data-i18n="footer_copy">© 2026 Ichiraku Ramen. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- ============ CART DRAWER ============ -->
+<div class="drawer-overlay" id="drawer-overlay"></div>
+<aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Order cart">
+  <div class="cart-drawer-head">
+    <h2 data-i18n="cart">Cart</h2>
+    <button class="icon-btn" id="cart-close" aria-label="Close cart" data-i18n-aria="aria_close">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+
+  <div class="cart-drawer-body" id="cart-items">
+    <div class="cart-empty" id="cart-empty">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4 8h16l-1.4 10.2a2 2 0 0 1-2 1.8H7.4a2 2 0 0 1-2-1.8L4 8Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+        <path d="M8.5 8V6a3.5 3.5 0 0 1 7 0v2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+      <p data-i18n="cart_empty_title">Your cart is empty.</p>
+      <span data-i18n="cart_empty_desc">Pick your favorite ramen or drink to get started.</span>
+    </div>
+  </div>
+
+  <div class="cart-drawer-foot" id="cart-foot" hidden>
+    <div class="cart-total-row">
+      <span data-i18n="subtotal">Subtotal</span>
+      <strong id="cart-subtotal">Rp 0</strong>
+    </div>
+    <button class="btn btn-primary btn-block" id="checkout-btn" data-i18n="checkout">Checkout</button>
+  </div>
+</aside>
+
+<!-- ============ CHECKOUT MODAL ============ -->
+<div class="modal-overlay" id="modal-overlay"></div>
+<div class="modal" id="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+
+  <div class="modal-step" id="step-summary">
+    <div class="modal-head">
+      <h2 id="checkout-title" data-i18n="summary_title">Order Summary</h2>
+      <button class="icon-btn" id="modal-close" aria-label="Close" data-i18n-aria="aria_close">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <ul class="summary-list" id="summary-list"></ul>
+
+    <!-- NEW: payment form (#3). The Confirm Order button is now the submit button of this form. -->
+    <form id="payment-form" novalidate>
+      <div class="summary-total-row">
+        <span data-i18n="total_payment">Total Payment</span>
+        <strong id="summary-total">Rp 0</strong>
+      </div>
+
+      <fieldset class="pay-fieldset">
+        <legend data-i18n="pay_method">Payment Method</legend>
+
+        <div class="pay-options">
+          <label class="pay-option">
+            <input type="radio" name="pay-method" value="bank" checked>
+            <span data-i18n="pay_bank">Bank Transfer</span>
+          </label>
+          <label class="pay-option">
+            <input type="radio" name="pay-method" value="ewallet">
+            <span data-i18n="pay_ewallet">E-Wallet</span>
+          </label>
+        </div>
+
+        <div class="field">
+          <label class="field-label" for="pay-account" id="pay-account-label" data-i18n="pay_account_bank">Account Number</label>
+          <input class="field-input" id="pay-account" name="account" type="text" inputmode="numeric"
+                 autocomplete="off" maxlength="16" required aria-required="true" aria-describedby="pay-account-error"
+                 placeholder="e.g. 1234567890" data-i18n-placeholder="pay_account_bank_ph">
+          <p class="field-error" id="pay-account-error" aria-live="polite" hidden></p>
+        </div>
+
+        <div class="field">
+          <label class="field-label" for="pay-pin" data-i18n="pay_pin">Password / PIN</label>
+          <input class="field-input" id="pay-pin" name="pin" type="password"
+                 autocomplete="new-password" maxlength="32" required aria-required="true" aria-describedby="pay-pin-error"
+                 placeholder="••••••" >
+          <p class="field-error" id="pay-pin-error" aria-live="polite" hidden></p>
+        </div>
+      </fieldset>
+
+      <button type="submit" class="btn btn-primary btn-block" id="confirm-order-btn" data-i18n="confirm_order">Confirm Order</button>
+    </form>
+  </div>
+
+  <div class="modal-step modal-step-success" id="step-success" hidden>
+    <div class="success-icon">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <h2 data-i18n="success_title">Order Confirmed!</h2>
+    <p>
+      <span data-i18n="success_pre">Order number</span>
+      <strong id="order-number">#IR-0000</strong>
+      <span data-i18n="success_post">has been received. Thanks for ordering from Ichiraku Ramen.</span>
+    </p>
+    <button class="btn btn-primary btn-block" id="success-close-btn" data-i18n="done">Done</button>
+  </div>
+
+</div>
+
+<!-- ============ TRACK ORDER MODAL (NEW, #8) ============ -->
+<div class="modal-overlay" id="track-overlay"></div>
+<div class="modal" id="track-modal" role="dialog" aria-modal="true" aria-labelledby="track-title">
+  <div class="modal-head">
+    <h2 id="track-title" data-i18n="track_title">Track Order</h2>
+    <button class="icon-btn" id="track-close" aria-label="Close" data-i18n-aria="aria_close">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+
+  <form id="track-form" novalidate>
+    <div class="field">
+      <label class="field-label" for="track-input" data-i18n="track_label">Order number</label>
+      <input class="field-input" id="track-input" type="text" autocomplete="off" maxlength="12"
+             placeholder="#IR-1234" aria-describedby="track-error">
+      <p class="field-error" id="track-error" aria-live="polite" hidden></p>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block" data-i18n="track_check">Check Status</button>
+  </form>
+
+  <div class="track-result" id="track-result" aria-live="polite" hidden>
+    <p class="track-order-no"><span data-i18n="track_label">Order number</span>: <strong id="track-order-no"></strong></p>
+    <p class="track-status" id="track-status"></p>
+    <ol class="track-steps" id="track-steps"></ol>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
